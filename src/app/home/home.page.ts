@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 declare var RazorpayCheckout: any;
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  paymentAmount: number = 333;
-  currency: string = 'USD';
-  currencyIcon: string = '$';
+  paymentAmount: number = 5000;
+  currency: string = 'INR';
+  currencyIcon: string = '₹';
   razor_key = 'rzp_test_urJcWW5CCTcr8V';
   cardDetails: any = {};
 
@@ -20,15 +20,15 @@ export class HomePage {
   payWithRazor() {
     var options = {
       description: 'Credits towards consultation',
-      image: 'https://i.imgur.com/3g7nmJC.png',
+      image: 'assets/icon/puthiyapaathai_payament_avatar.png',
       currency: this.currency,
       key: this.razor_key,
-      amount: this.paymentAmount,
-      name: 'foo',
+      amount: this.paymentAmount*100,
+      name: 'test',
       prefill: {
-        email: 'admin@enappd.com',
-        contact: '9621323231',
-        name: 'Enappd'
+        email: 'gowtham@enappd.com',
+        contact: '8667361738',
+        name: 'Gowtham'
       },
       theme: {
         color: '#F37254'
